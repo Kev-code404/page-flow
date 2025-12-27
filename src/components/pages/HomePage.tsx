@@ -229,7 +229,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-[2rem] transform rotate-3 scale-105 blur-2xl" />
                   <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
                     <ParallaxImage 
-                      src="https://static.wixstatic.com/media/c8ce01_473cbc6cce03408e8e30cbc6ad5cbcd0~mv2.png?id=hero-main"
+                      src="https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=hero-team-collab"
                       alt="Team collaboration in modern office workspace"
                       className="w-full h-full"
                     />
