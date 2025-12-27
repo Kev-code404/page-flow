@@ -356,98 +356,148 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* --- STATS & IMPACT SECTION (Sticky Layout) --- */}
+        {/* --- WHY CHOOSE US SECTION --- */}
         <section className="py-32 bg-white relative">
           <div className="max-w-[120rem] mx-auto px-6 lg:px-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               
-              {/* Sticky Left Content */}
-              <div className="relative">
-                <div className="sticky top-32">
-                  <AnimatedElement>
-                    <div className="w-16 h-1 bg-primary mb-8" />
-                    <h2 className="font-heading text-4xl lg:text-5xl text-foreground mb-8 leading-tight">
-                      Delivering smart technology with speed and outcomes.
-                    </h2>
-                    <p className="font-paragraph text-xl text-secondary mb-10 leading-relaxed">
-                      Our team of experts combines cutting-edge technology with industry best practices to deliver solutions that drive real business results. We don't just build software; we build your future.
-                    </p>
-                    
-                    <ul className="space-y-4 mb-10">
-                      {['Agile Development', 'Cloud Native Solutions', 'Enterprise Security', '24/7 Maintenance'].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-foreground font-medium">
-                          <CheckCircle2 className="text-primary w-5 h-5" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-10 py-7 text-lg font-medium shadow-lg shadow-primary/25">
-                      Get Started Today
-                    </Button>
-                  </AnimatedElement>
-                </div>
-              </div>
-
-              {/* Right Grid Content */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {STATS_DATA.map((stat, index) => (
-                  <AnimatedElement key={index} delay={index * 100} direction="up">
-                    <div className="bg-light-blue/30 p-8 rounded-[2rem] hover:bg-light-blue/60 transition-colors duration-300 h-full flex flex-col justify-center items-center text-center group border border-transparent hover:border-primary/10">
-                      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                        <stat.icon className="w-8 h-8 text-primary" />
-                      </div>
-                      <h3 className="font-heading text-5xl lg:text-6xl text-primary mb-2 font-bold tracking-tight">
-                        {stat.value}
-                      </h3>
-                      <p className="font-paragraph text-lg text-foreground font-medium">
-                        {stat.label}
-                      </p>
-                    </div>
-                  </AnimatedElement>
-                ))}
-                
-                {/* Additional Visual Block */}
-                <AnimatedElement delay={400} className="sm:col-span-2 mt-6">
-                  <div className="relative rounded-[2rem] overflow-hidden h-64 w-full group">
-                    <div className="absolute inset-0 bg-primary/90 mix-blend-multiply z-10 transition-opacity duration-500 group-hover:opacity-80" />
-                    <Image 
-                      src="https://static.wixstatic.com/media/c8ce01_473cbc6cce03408e8e30cbc6ad5cbcd0~mv2.png?id=stats-bg"
-                      alt="Office culture"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 z-20 flex items-center justify-center">
-                      <p className="text-white font-heading text-2xl font-bold border-b-2 border-white pb-1">
-                        Join Our Success Story
-                      </p>
+              {/* Left Content */}
+              <div>
+                <AnimatedElement>
+                  <h2 className="font-heading text-4xl lg:text-5xl text-foreground mb-8 leading-tight">
+                    Why <span className="text-primary">Choose Us</span>?
+                  </h2>
+                  <p className="font-paragraph text-lg text-secondary mb-12 leading-relaxed">
+                    We help organizations move from digital ambition to execution. Our solutions are designed with precision, scalability, and proven results to accelerate your business transformation.
+                  </p>
+                  
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="font-heading text-xl text-foreground mb-4">Expertise</h3>
+                      <ul className="space-y-3">
+                        {['Cloud Solutions', 'AI Integration', '24/7 Automation'].map((item, i) => (
+                          <li key={i} className="flex items-center gap-3 text-foreground font-paragraph">
+                            <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </AnimatedElement>
               </div>
 
+              {/* Right Illustration */}
+              <AnimatedElement direction="right" delay={200} className="relative">
+                <div className="relative h-96 lg:h-full min-h-96 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-[2rem]" />
+                  <Image 
+                    src="https://static.wixstatic.com/media/c8ce01_a8e472884e394f209dd710bfefc77ee4~mv2.png?id=why-choose-us"
+                    alt="Why Choose Us illustration"
+                    className="w-full h-full object-contain relative z-10"
+                    width={600}
+                  />
+                </div>
+              </AnimatedElement>
             </div>
           </div>
         </section>
 
-        {/* --- CTA SECTION --- */}
-        <section className="py-24 bg-background border-t border-gray-200">
-          <div className="max-w-5xl mx-auto px-6 text-center">
-            <AnimatedElement direction="up">
-              <h2 className="font-heading text-4xl lg:text-5xl text-foreground mb-6">
-                Ready to transform your business?
-              </h2>
-              <p className="font-paragraph text-xl text-secondary mb-10 max-w-2xl mx-auto">
-                Let's discuss how our intelligent applications can help you achieve your goals and drive sustainable growth.
+        {/* --- CONNECT WITH US SECTION --- */}
+        <section className="py-32 bg-primary relative overflow-hidden">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl translate-y-1/2" />
+
+          <div className="max-w-[120rem] mx-auto px-6 lg:px-16 relative z-10">
+            <div className="max-w-2xl mx-auto text-center mb-16">
+              <AnimatedElement>
+                <h2 className="font-heading text-4xl lg:text-5xl text-white mb-8">
+                  Connect with us
+                </h2>
+                
+                <div className="flex gap-3 bg-white rounded-full p-2 max-w-md mx-auto">
+                  <input 
+                    type="email" 
+                    placeholder="Your email" 
+                    className="flex-1 bg-transparent px-6 py-3 text-foreground placeholder-gray-400 outline-none font-paragraph"
+                  />
+                  <button className="bg-primary hover:bg-primary/90 text-white rounded-full p-3 transition-all hover:scale-105">
+                    <ArrowRight size={20} />
+                  </button>
+                </div>
+              </AnimatedElement>
+            </div>
+
+            {/* Footer Links Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/20 pt-16">
+              <AnimatedElement delay={100}>
+                <div>
+                  <h3 className="font-heading text-white text-lg mb-4">PRODUCTS</h3>
+                  <ul className="space-y-2">
+                    {['Solutions', 'Features', 'Pricing'].map((link) => (
+                      <li key={link}>
+                        <a href="#" className="text-white/70 hover:text-white transition-colors font-paragraph text-sm">
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedElement>
+
+              <AnimatedElement delay={150}>
+                <div>
+                  <h3 className="font-heading text-white text-lg mb-4">SERVICES</h3>
+                  <ul className="space-y-2">
+                    {['Consulting', 'Development', 'Support'].map((link) => (
+                      <li key={link}>
+                        <a href="#" className="text-white/70 hover:text-white transition-colors font-paragraph text-sm">
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedElement>
+
+              <AnimatedElement delay={200}>
+                <div>
+                  <h3 className="font-heading text-white text-lg mb-4">LEGAL</h3>
+                  <ul className="space-y-2">
+                    {['Privacy Policy', 'Terms of Service', 'Cookies'].map((link) => (
+                      <li key={link}>
+                        <a href="#" className="text-white/70 hover:text-white transition-colors font-paragraph text-sm">
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedElement>
+
+              <AnimatedElement delay={250}>
+                <div>
+                  <h3 className="font-heading text-white text-lg mb-4">TALK TO US</h3>
+                  <ul className="space-y-2">
+                    {['Contact Us', 'Support', 'Careers'].map((link) => (
+                      <li key={link}>
+                        <a href="#" className="text-white/70 hover:text-white transition-colors font-paragraph text-sm">
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedElement>
+            </div>
+
+            {/* Copyright */}
+            <div className="border-t border-white/20 mt-12 pt-8 text-center">
+              <p className="text-white/60 font-paragraph text-sm">
+                © 2024 name. All rights reserved.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-12 py-8 text-lg font-medium shadow-xl shadow-primary/20">
-                  Schedule a Consultation
-                </Button>
-                <Button variant="outline" className="w-full sm:w-auto border-2 border-gray-200 hover:border-primary text-foreground hover:text-primary bg-white hover:bg-primary/5 rounded-full px-12 py-8 text-lg font-medium">
-                  View Case Studies
-                </Button>
-              </div>
-            </AnimatedElement>
+            </div>
           </div>
         </section>
 
