@@ -1,19 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-[120rem] mx-auto px-6 lg:px-16">
@@ -21,11 +9,11 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <div className="w-8 h-8 rounded-full bg-gray-300 mr-2"></div>
-            <span className={`font-heading text-xl text-foreground transition-opacity duration-300 ${isScrolled ? 'opacity-0' : 'opacity-100'}`}>name</span>
+            <span className="font-heading text-xl text-foreground">name</span>
           </Link>
 
           {/* Navigation */}
-          <nav className={`hidden md:flex items-center gap-8 transition-all duration-300 ${isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+          <nav className="hidden md:flex items-center gap-8">
             <button className="text-base text-foreground hover:text-primary transition-colors flex items-center gap-1">
               Products
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +35,7 @@ export default function Header() {
           </nav>
 
           {/* CTA Button */}
-          <Button className={`bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-2 font-paragraph transition-opacity duration-300 ${isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 py-2 font-paragraph">
             Contact us
           </Button>
         </div>
