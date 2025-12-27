@@ -155,9 +155,7 @@ export default function HomePage() {
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-50 origin-left"
         style={{ scaleX }}
       />
-
       <Header />
-
       <main className="flex flex-col w-full">
         
         {/* --- HERO SECTION --- */}
@@ -391,12 +389,12 @@ export default function HomePage() {
               <AnimatedElement direction="right" delay={200} className="relative">
                 <div className="relative h-96 lg:h-full min-h-96 flex items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-[2rem]" />
-                  <Image 
-                    src="https://static.wixstatic.com/media/c8ce01_a8e472884e394f209dd710bfefc77ee4~mv2.png?id=why-choose-us"
-                    alt="Why Choose Us illustration"
+                  <Image
+                    src="https://static.wixstatic.com/media/c8ce01_a65a7736e42e4121a189002edfe383d3~mv2.png"
                     className="w-full h-full object-contain relative z-10"
                     width={600}
-                  />
+                    originWidth={2160}
+                    originHeight={1916} />
                 </div>
               </AnimatedElement>
             </div>
@@ -502,7 +500,6 @@ export default function HomePage() {
         </section>
 
       </main>
-
       <Footer />
     </div>
   );
